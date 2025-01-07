@@ -67,7 +67,7 @@ class UserController {
         
         // Process the list to add the message before user data
         return users.stream()
-            .map(user -> "My name is " + user.getUser() + " and my age is " + user.getAge())
+            .map(user -> "My name is wizzzzzz " + user.getUser() + " and my age is " + user.getAge())
             .collect(Collectors.toList());
     }
 }
