@@ -1,0 +1,23 @@
+# Ignore Maven wrapper
+.mvn
+.mvnw
+.mvnw.cmd
+
+# Ignore target directory where compiled files are stored
+target/
+
+# Ignore IDE configuration files
+.idea/
+.vscode/
+
+# Ignore local build files (if any)
+*.log
+*.bak
+*.swp
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore test files (if not needed for building the app)
+src/test/
