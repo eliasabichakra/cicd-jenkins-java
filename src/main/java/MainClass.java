@@ -10,6 +10,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @SpringBootApplication
 public class MainClass {
@@ -58,9 +59,15 @@ class UserController {
         this.userRepository = userRepository;
     }
 
-    // Fetch all users from the 'users' table
+    // Fetch all users from the 'users' table and modify the response
     @GetMapping("/users")
-    public List<User> getUsers() {
-        return userRepository.findAll(); // Fetches all records from the 'users' table
+    public List<String> getUsers() {
+        // Fetch all records from the 'users' table
+        List<User> users = userRepository.findAll();
+        
+        // Process the list to add the message before user data
+        return users.stream()
+            .map(user -> "My name is " + user.getUser() + " and my age is " + user.getAge())
+            .collect(Collectors.toList());
     }
 }
